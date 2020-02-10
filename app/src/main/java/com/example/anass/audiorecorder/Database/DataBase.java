@@ -23,6 +23,8 @@ public abstract class DataBase extends RoomDatabase {
 
     private static final String DB_NAME = "records_database";
 
+    private Database() {}
+    
     public static synchronized DataBase getInstance(Context context) {
         if (mInstance == null) {
             mInstance = Room.databaseBuilder(context.getApplicationContext(), DataBase.class, DB_NAME)
